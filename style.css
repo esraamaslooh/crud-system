@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
+
+:root {
+    --mainColor: #FEFBE9;
+    --buttonTransitionColor: #faefaf;
+    --inputsColor: #E1EEDD;
+    --outputsTable: #E1EEDD;
+    --textColor: #F0A04B;
+    --buttonsColor: #183A1D;
+    --titleColor: #183A1D;
+    --deleteColor: #f00f0ffc;
+    --deleteColorText: #000;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: var(--mainColor);
+}
+
+#cruds {
+    width: 90vw;
+    margin: auto;
+}
+
+.title, .description {
+    display: block;
+    text-align: center;
+    color: var(--titleColor);
+    text-transform: uppercase;
+    margin: 5px 0px;
+}
+
+.description {
+    text-transform: capitalize;
+}
+
+.body {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 5px 0px;
+    justify-content: center;
+    align-items: center;
+    color: var(--textColor);
+    font-size: medium;
+}
+
+input {
+    background-color: var(--inputsColor);
+    border: none;
+    padding: 10px 5px;
+    outline: none;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+input:focus {
+    transform: scale(1.05);
+    border: 1px solid var(--buttonsColor);
+}
+
+#title, #catg, #count {
+    width: 100%;
+}
+
+#price, #taxes, #ads, #disc, #total {
+    width: 25%;
+}
+
+#total {
+    color: var(--textColor);
+    background-color: var(--outputsTable);
+    margin: 5px;
+    padding: 10px 5px;
+    text-align: center;
+    line-height: 25px;
+    border-radius: 5px;
+    height: 45px;
+}
+
+#total::before {
+    content: 'Total: ';
+}
+
+.numbers {
+    display: flex;
+    width: 100%;
+}
+
+button {
+    border: none;
+    color: var(--textColor);
+    background-color: var(--buttonsColor);
+    padding: 5px;
+    margin: 5px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: medium;
+    transition: 0.5s;
+    height: 40px;
+    width: 80%;
+    min-width: 100px;
+    line-height: 30px;
+}
+
+#create, #deleteAll {
+    width: 100%;
+}
+
+#deleteAll::before {
+    content: 'DeleteAll';
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#search {
+    width: 100%;
+}
+
+#searchTitle, #searchCategory {
+    width: 45%;
+}
+
+button:hover {
+    background-color: var(--buttonTransitionColor);
+    letter-spacing: 2px;
+    border: 1px solid var(--buttonsColor);
+}
+
+#delete:hover, #deleteAll:hover {
+    background-color: var(--deleteColor);
+    color: var(--deleteColorText);
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    margin: 10px auto;
+}
+
+thead tr {
+    text-transform: capitalize;
+}
+
+th td {
+    padding: 5px;
+}
+
+#cancelTotal {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}
+
+#cancel {
+    width: 45%;
+}
+
+#cancel::before {
+    content: 'Cancel Update';
+}

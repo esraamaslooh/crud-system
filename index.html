@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To CRUDS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body onload="readData()">
+    <div class="container" id="cruds">
+        <div class="header">
+            <h1 class="title">cruds</h1>
+            <span class="description">product management system</span>
+        </div>
+        <div class="body">
+            <input id="title" type="text" placeholder="Title">
+            <div class="numbers">
+                <input onkeyup="getTotal()" id="price" type="number" placeholder="Price">
+                <input onkeyup="getTotal()" id="taxes" type="number" placeholder="Taxes">
+                <input onkeyup="getTotal()" id="ads" type="number" placeholder="Ads">
+                <input onkeyup="getTotal()" id="disc" type="number" placeholder="Discount">  
+            </div>
+            <div id="cancelTotal">
+                <div id="total">0</div>
+            </div>
+            <input id="count" type="number" placeholder="Count">
+            <input id="catg" type="text" placeholder="Category">
+            <button onclick="createNewProduct()" id="create">Create</button>
+            <input onkeyup="autoSearch()" id="search" type="text">
+            <div class="search">
+                <button onclick="searchMode(this.id)" id="searchTitle">Search By Title</button>
+                <button onclick="searchMode(this.id)" id="searchCategory">Search By Category</button>
+            </div>
+        </div>
+        <div id="deleteContainer"></div>
+        <table>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>title</th>
+                    <th>price</th>
+                    <th>taxes</th>
+                    <th>ads</th>
+                    <th>discount</th>
+                    <th>total</th>
+                    <th id="noOfItems">No. of items</th>
+                    <th>category</th>
+                    <th>update</th>
+                    <th colspan="2">number of items to sold</th>
+                    <th>delete</th>
+                </tr> 
+            </thead>
+            <tbody id="tbody">
+            </tbody>
+        </table>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
